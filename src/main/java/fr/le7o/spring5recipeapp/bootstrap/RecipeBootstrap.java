@@ -4,6 +4,7 @@ import fr.le7o.spring5recipeapp.domain.*;
 import fr.le7o.spring5recipeapp.repositories.CategoryRepository;
 import fr.le7o.spring5recipeapp.repositories.RecipeRepository;
 import fr.le7o.spring5recipeapp.repositories.UnitOfMeasureRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class RecipeBootstrap implements CommandLineRunner {
 
@@ -30,6 +32,8 @@ public class RecipeBootstrap implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         recipeRepository.saveAll(getRecipes());
+        //maj (136)
+        log.info("Loading Bootstrap Data");
     }
 /*    @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -154,6 +158,11 @@ public class RecipeBootstrap implements CommandLineRunner {
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
 
+        //url
+        guacRecipe.setUrl("http://www.simplyrecipes.com/recipes/perfect_guacamole/");
+        guacRecipe.setServings(4);
+        guacRecipe.setSource("Simply Recipes");
+
         //add to return list
         recipes.add(guacRecipe);
 
@@ -233,6 +242,11 @@ public class RecipeBootstrap implements CommandLineRunner {
 
         tacosRecipe.getCategories().add(americanCategory);
         tacosRecipe.getCategories().add(mexicanCategory);
+
+        //url
+        tacosRecipe.setUrl("http://www.simplyrecipes.com/recipes/chiken_tacos/");
+        tacosRecipe.setServings(4);
+        tacosRecipe.setSource("Simply Recipes");
 
         recipes.add(tacosRecipe);
         return recipes;

@@ -5,12 +5,14 @@ import fr.le7o.spring5recipeapp.domain.UnitOfMeasure;
 import fr.le7o.spring5recipeapp.repositories.CategoryRepository;
 import fr.le7o.spring5recipeapp.repositories.UnitOfMeasureRepository;
 import fr.le7o.spring5recipeapp.services.RecipeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
+@Slf4j
 @Controller
 public class IndexController {
 
@@ -32,7 +34,7 @@ public class IndexController {
 
     @RequestMapping({"", "/", "/index"})
     public String getIndexPage(Model model){
-        System.out.println("testeaaze");
+        log.info("Getting Index Page");
         //Maj (114)
 /*        Optional<Category> categoryOptional = categoryRepository.findByDescription("French");
         Optional<UnitOfMeasure> unitOfMeasureOptional =  unitOfMeasureRepository.findByDescription("Pinch");

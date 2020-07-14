@@ -12,4 +12,10 @@ public interface RecipeService {
 
     //Maj142
     RecipeCommand saveRecipeCommand(RecipeCommand command);
+
+    //Maj 144
+    RecipeCommand findRecipeCommandById(Long id);
+
+    //Maj 145
+    void deleteById(Long idToDelete);
 }

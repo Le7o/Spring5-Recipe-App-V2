@@ -34,6 +34,7 @@
     <ul>
         <li th:each="ingredient : ${recipe.ingredients}" th:text="${ingredient.amount} + ' '+ ${ingredient.uom.description} + ' of ' + ${ingredient.description}">Ingrédients</li>
     </ul>
+    <a  href="#" th:href="@{'/recipe/' + ${recipe.id} + '/ingredients'}">View Ingredient</a>
     <h5>Directions</h5>
     <p th:text="${recipe.directions}">Directions</p>
     <h5>Notes</h5>

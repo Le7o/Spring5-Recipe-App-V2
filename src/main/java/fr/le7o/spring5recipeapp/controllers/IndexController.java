@@ -38,8 +38,8 @@ public class IndexController {
         //Maj (114)
 /*        Optional<Category> categoryOptional = categoryRepository.findByDescription("French");
         Optional<UnitOfMeasure> unitOfMeasureOptional =  unitOfMeasureRepository.findByDescription("Pinch");
-        System.out.println("Cat Id is " + categoryOptional.get().getId());
-        System.out.println("Unit Measure Id is " + unitOfMeasureOptional.get().getId());*/
+        log.info("Cat Id is " + categoryOptional.get().getId());
+        log.info("Unit Measure Id is " + unitOfMeasureOptional.get().getId());*/
 
         //Maj (115)
         model.addAttribute("recipes", recipeService.getRecipes());

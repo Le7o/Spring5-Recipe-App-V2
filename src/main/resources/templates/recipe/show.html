@@ -12,6 +12,15 @@
     <ul>
         <li th:each="category : ${recipe.categories}" th:text="${category.description}">Catégorie</li>
     </ul>
+    <!--Maj 161: static image-->
+    <!--Maj 162: changement de src dans img-->
+<!--    <img th:src="@{/images/guacamole400x400.jpg}"
+         width="200" height="200">-->
+    <img th:src="@{'/recipe/' + ${recipe.id} + '/recipeimage'}"
+         width="200" height="200">
+    <a th:href="@{'/recipe/' + ${recipe.id} + '/image'}" role="button">Change Image</a>
+
+    <!--Maj 161: static image-->
     <table>
         <tr>
             <th>Servings</th>

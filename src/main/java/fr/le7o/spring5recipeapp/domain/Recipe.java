@@ -11,11 +11,8 @@ import java.util.Set;
 @Data
 @EqualsAndHashCode(exclude = "ingredients")
 @Entity
-public class Recipe {
+public class Recipe extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String description;
     private Integer prepTime;
     private Integer cookTime;

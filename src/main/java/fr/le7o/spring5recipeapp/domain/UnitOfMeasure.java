@@ -1,15 +1,13 @@
 package fr.le7o.spring5recipeapp.domain;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import lombok.*;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-public class UnitOfMeasure {
+public class UnitOfMeasure extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String description;
 }

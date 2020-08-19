@@ -7,11 +7,8 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-public class Ingredient {
+public class Ingredient extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String description;
     private BigDecimal amount;
 
@@ -19,7 +16,7 @@ public class Ingredient {
     //private UnitOfMeasure uom;
 
     //V2 (109)
-    @OneToOne (fetch = FetchType.EAGER)
+    @OneToOne
     private UnitOfMeasure uom;
 
     @ManyToOne
